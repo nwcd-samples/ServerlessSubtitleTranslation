@@ -3,11 +3,7 @@ import boto3
 import os
 
 
-s3_client = boto3.client('s3')
-translate_client = boto3.client('translate')
 
-sourceLanguageCode = "zh"
-targetLanguageCode = "en"
 
 
 # 读取srt格式的字幕文件
@@ -55,6 +51,15 @@ def get_translated_srt_content(id_list, time_list, translate_subtitles_list):
 
 #lambda entry point
 def lambda_handler(event, context):
+    
+    s3_client = boto3.client('s3')
+    translate_client = boto3.client('translate')
+
+    # 原字幕语言
+    sourceLanguageCode = "zh"
+    # 目标字幕语言
+    targetLanguageCode = "en"
+
     region = os.environ['AWS_DEFAULT_REGION']
     bucket_name = event['Records'][0]['s3']['bucket']['name']
     sourceS3Key = event['Records'][0]['s3']['object']['key']
