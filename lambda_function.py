@@ -2,10 +2,6 @@ import json
 import boto3
 import os
 
-
-
-
-
 # 读取srt格式的字幕文件
 def read_srt(filename):
     id_list = []
