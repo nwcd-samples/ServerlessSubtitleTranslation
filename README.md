@@ -3,6 +3,13 @@
 ## 简介
 随着媒体行业的全球化发展，越来越多的用户（包括企业和个人）都会有视频字幕的自动化翻译的需求。本文使用Amazon S3作为视频和字幕文件的存储，使用 Amazon Translate 实现了字幕的机器翻译，并且使用Amazon Lambda来调用 Amazon Translate 构建了一套无服务器的视频字幕翻译架构。利用本文实现的方案，您只需要将视频和字幕文件上传至Amazon S3，就可以自动获得翻译后的视频和字幕文件。
 
+## 免责声明
+建议测试过程中使用此方案，生产环境使用请自行考虑评估。
+
+当您对方案需要进一步的沟通和反馈后，可以联系 nwcd_labs@nwcdcloud.cn 获得更进一步的支持。
+
+欢迎联系参与方案共建和提交方案需求, 也欢迎在 github 项目 issue 中留言反馈 bugs。
+
 ## 整体架构
 ![image](https://github.com/nwcd-samples/ServerlessSubtitleTranslation/blob/master/Translate_Lambda.png)
 
